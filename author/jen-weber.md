@@ -4,7 +4,7 @@ id: jen-weber
 image: 
 cover:
 website: https://jenweber.netlify.com
-twitter: @jwwweber
+twitter: https://twitter.com/jwwweber
 facebook:
 location:
 ---

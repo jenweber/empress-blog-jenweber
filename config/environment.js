@@ -24,15 +24,15 @@ module.exports = function(environment) {
     },
 
     blog: {
-      title: 'jenweber-blog',
-      description: "Jen Weber's Articles - Built with Ember",
+      title: 'Jen Weber',
+      description: "Articles on JavaScript, Ember.js, organizational leadership, open source, and more",
       coverImage: '/images/blog-cover.jpg',
 
       navigation: [{
         label: 'Home',
         route: 'index'
       }, {
-        label: 'Built by Jen Weber',
+        label: 'About me',
         route: 'page',
         id: 'jen-weber'
       }]
