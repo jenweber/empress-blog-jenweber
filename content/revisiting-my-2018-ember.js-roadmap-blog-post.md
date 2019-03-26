@@ -1,5 +1,5 @@
 ---
-title: Revisiting My 2018 Ember.Js Roadmap Blog Post
+title: Revisiting my 2018 Ember.js Roadmap blog post
 image:
 imageMeta:
   attribution:
