@@ -1,12 +1,17 @@
-# empress-blog Netlify Casper Template  
+# empress-blog-jenweber
 
-This repo is used to generate a new empress-blog with the Casper template using Netlify's template system
+This Jen Weber's blog, built using [`empress-blog`](https://github.com/empress/empress-blog). You can make your own blog with a one-click deploy too! See the `empress-blog` README for more details.
 
-If you want to get started right now with a new empress-blog just click the button below
+It is hosted on Netlify at [jenweber.netlify.com](https://jenweber.netlify.com).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/empress/empress-blog-netlify-casper-template)
+## Licensing
 
+Please see `LICENSING.md` for details. In short, articles in the `content` directory are by Jen Weber, with all rights reserved. Under normal copyright law, you may cite, quote, and build upon content through [fair use](https://fairuse.stanford.edu/overview/fair-use/what-is-fair-use/).
+However without written permission, you may not duplicate content to host elsewhere.
+If you would like to duplicate or modify the content for reasons like translating into other languages, sharing in a company newsletter/training portal, or whatever, please get in touch :) My email is in my [GitHub profile](https://github.com/jenweber).
+
+The app itself (everything not in `content`) is under MIT license.
 
 ## Technology
 
-If you are interested in how this works then go checkout the [empress-blog](https://github.com/empress/empress-blog) repo or reach out to me [on Twitter](https://twitter.com/real_ate)
+If you are interested in how this works, then go checkout the [empress-blog](https://github.com/empress/empress-blog) repo or reach out to the app creator [on Twitter](https://twitter.com/real_ate)
