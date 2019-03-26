@@ -8,4 +8,3 @@ twitter: @jwwweber
 facebook:
 location:
 ---
-You can delete this user to remove all the welcome posts

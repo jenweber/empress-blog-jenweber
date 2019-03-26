@@ -15,3 +15,10 @@ The app itself (everything not in `content`) is under MIT license.
 ## Technology
 
 If you are interested in how this works, then go checkout the [empress-blog](https://github.com/empress/empress-blog) repo or reach out to the app creator [on Twitter](https://twitter.com/real_ate)
+
+## New posts
+
+```sh
+ember g post "this is a post I want to write"
+```
+
