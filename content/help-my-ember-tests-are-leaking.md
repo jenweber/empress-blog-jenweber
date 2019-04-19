@@ -36,7 +36,7 @@ I almost always leave conversations with him by thinking, I need to write a blog
 Here's what was going on. 
 
 My acceptance test was leaking state, meaning that some asychronous code was resolving after the test had already moved on and reset some resources for the next test.
-This process of bringin the test back to a "clean slate" is referred to as "test teardown" in Ember and other JavaScript environments.
+This process of bringing the test back to a "clean slate" is referred to as "test teardown" in Ember and other JavaScript environments.
 
 In my case, an `afterEach` hook that destroyed the store was happening before the code was actually done.
 However, you might see the same sort of thing if you use `this.anything` after the testing teardown steps.
