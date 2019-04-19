@@ -1,9 +1,9 @@
 ---
 title: Help, my Ember acceptance tests are leaking!
-image:
-imageMeta:
-  attribution:
-  attributionLink:
+image: ./images/jon-tyson-589848-unsplash.jpg
+imageMeta: 
+  attribution: Photo by Jon Tyson on Unsplash
+  attributionLink: https://unsplash.com/photos/SAj06jIlQ2M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 featured: true
 authors: 
   - jen-weber
