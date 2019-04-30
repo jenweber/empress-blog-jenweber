@@ -1,5 +1,5 @@
 ---
-title: Ember.Js Stack Overflow Livestreams Return!
+title: Ember.js Stack Overflow Livestreams Return!
 image: /images/may-i-ask.png
 imageMeta:
   attribution:
