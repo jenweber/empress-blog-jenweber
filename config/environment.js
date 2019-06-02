@@ -25,7 +25,7 @@ module.exports = function(environment) {
 
     blog: {
       title: 'Jen Weber',
-      description: "Articles on JavaScript, Ember.js, organizational leadership, open source, and more",
+      description: "JavaScript, Ember.js, and all the web things",
       coverImage: '/images/blog-cover.jpg',
 
       navigation: [{
