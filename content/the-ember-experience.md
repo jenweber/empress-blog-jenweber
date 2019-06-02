@@ -1,6 +1,6 @@
 ---
 title: The Ember Experience - 2019 Roadmap post
-image: ./images/repair.jpg
+image: /images/repair.jpg
 imageMeta:
   attribution: Milan Degraeve
   attributionLink: https://unsplash.com/@milandegraeve?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
