@@ -78,7 +78,7 @@ Keep reading for more information on that. You can also make your own Decorators
 
 Just to be clear, Computed Properties aren't _gone_ from Ember. You can keep using them in "Classic" (aka non-Native Class) Components, Controllers, Routes etc. in your app. But if you are switching to Native Classes, you have two options for refactoring your computed properties.
 
-As a first pass, you could use the `@computed` decorator inside your Native:
+As a first pass, you could use the `@computed` decorator inside your Native Class thing:
 
 ```js
 import { computed } from '@ember/object';
