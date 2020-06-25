@@ -213,7 +213,7 @@ export default class MyInputComponent extends Component {
 }
 ```
 
-Notice that our handleInput receives an argument, which I named el in the example above.  e is short for "event." I could have called it "bananas" if I wanted to instead. Anyway, whenever you use `{{on}}` to call a component's action, it always passes the event itself as the first argument. Our event is input. If we console.log el, we'd see a huge object for InputEvent. The InputEvent has a property called data that contains the value someone typed into the input!
+Notice that our handleInput receives an argument, which I named e in the example above.  e is short for "event." I could have called it "bananas" if I wanted to instead. Anyway, whenever you use `{{on}}` to call a component's action, it always passes the event itself as the first argument. Our event is input. If we console.log e, we'd see a huge object for InputEvent. The InputEvent has a property called data that contains the value someone typed into the input!
 
 Now that we have that input entry, we could do things like run validation and display helper text, set a property on this component, or call an action passed into the component from a parent. "Validation" in this context means something like checking to see if a user entry has the right format, and displaying a message to help them edit their information. For example, maybe the input has a character limit, and you want to let the user know that they are over it, and they need to do some editing before submitting.
 
