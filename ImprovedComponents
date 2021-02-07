@@ -1,0 +1,244 @@
+
+
+## Use composition for reusable components
+
+Whenever you want a component to be reusable, it takes some upfront thinking.
+What are the different ways this component will be used? What kinds of
+things might get added in the future? If you can think of more than two
+different ways that the component can be used, this section is for you.
+If you find yourself tempted to write a component that has different "modes,"
+that's another sign it's time for a refactor.
+
+Here is a look at the problem first.
+Let's say that we are making a component that displays a form field in a
+nice layout, with the label on the left and the input on the right:
+
+```handlebars
+<div class="simple-input">
+    <label for={{this.uniqueId}}>
+        {{@labelText}}
+    </label>
+    <Input id={{this.uniqueId}} @value={@value}>
+</div>
+```
+
+Sometimes, you want a button to show up. No problem, add another property:
+
+```handlebars
+<div class="simple-input">
+    <label for={{this.uniqueId}} class"my-label">
+        {{@labelText}}
+    </label>
+    <Input id={{this.uniqueId}} @value={{@value}} class"my-input">
+    {{if @showButton}}
+        <button onclick={{@submit}} class="my-button">
+            Submit
+        </button>
+    {{#if}}
+</div>
+```
+
+But sometimes, you need a cancel button...
+
+```handlebars
+<div class="simple-input-container">
+    <label for={{this.uniqueId}} class"my-label">
+        {{@labelText}}
+    </label>
+    <Input id={{this.uniqueId}} @value={{@value}} class"my-input">
+    {{if @showCancelButton}}
+        <button onclick={{@cancel}} class="my-button">
+            Cancel
+        </button>
+    {{#if}}
+    {{if @showSubmitButton}}
+        <button onclick={{@submit}} class="my-button">
+            Submit
+        </button>
+    {{#if}}
+</div>
+```
+
+...And then you realize that "Submit" should sometimes say "Save," and the label
+text should sometimes have a different style to make it bold. Now
+the Submit button text is also a variable, and we're passing a class into the
+label:
+
+```handlebars
+<div class="simple-input-container">
+    <label for={{this.uniqueId}} class"my-label {{@customClass}}">
+        {{@labelText}}
+    </label>
+    <Input id={{this.uniqueId}} @value={{@value}} class"my-input">
+    {{if @showCancelButton}}
+        <button onclick={{@cancel}} class="my-button">
+            Cancel
+        </button>
+    {{#if}}
+    {{if @showSubmitButton}}
+        <button onclick={{@submit}} class="my-button">
+            {{@buttonText}}
+        </button>
+    {{#if}}
+</div>
+```
+
+It's time to stop and think, and refactor. If we do nothing, it would look
+like this to use the component:
+
+```handlebars
+<MyComponent 
+    @showCancelButton={{this.showCancelButton}}
+    @showSubmitButton={{this.showSubmitButton}}
+    @submit={{this.submit}}
+    @cancel={{this.cancel}}
+    @labelText="First name"
+    @labelClass="extra-bold"
+    @buttonText="Save"
+    @value={{this.value}}
+/>
+```
+
+That is difficult to read and annoying to test.
+
+If we use composition instead, our component could be something like this:
+
+```
+<Field::Container>
+    <label for={{this.uniqueId}} class="extra-bold">
+        First name
+    <label for={{this.uniqueId}}>
+    <Field::Input id={{this.uniqueId}} @value={{@value}} />
+    <Field::Cancel @cancel={{this.cancel}}>
+        Cancel
+    <Field::Cancel>
+    <Field::Submit @submit={{this.submit}}>
+        Save
+    <Field::Submit>
+<Field::Container>
+```
+
+Why is this an improvement?
+
+- At a glance, you can tell what is going to render. You do not have to
+read through JavaScript logic or boot up the app to know what is happening.
+- It is easy to add new things. Let's say that I want an icon to show up next
+to the label text. No problem! We just add it in.
+- It is easier to get full test coverage. You need a test that the
+Container renders its children, that the Input shows a value, and that
+the Submit and Cancel components call the method passed in when they are
+clicked. If we had kept the original setup, there are 8 properties to test
+and the booleans all need their variations checked.
+
+### Using `{{children}}` and block style components
+
+When I first started writing Ember apps, I never did this approach.
+I was confused by how to use `{{children}}`, and my apps were kind of messy
+as a result.
+If you are confused too, here's a quick explanation of `{{children}}`.
+
+Whenever you create a component, you have an opportunity to pass any HTML
+into it that you want. If you do this, it's called Block Form. Here's an example:
+
+```handlebars
+<MyComponent>
+    Here is some text
+<MyComponent>
+```
+
+The template for the component would look something like this:
+
+```handlebars
+<div class="some-container">
+    {{children}}
+</div>
+```
+
+Anything that gets passed in between the `<MyComponent>` tags is available
+to use as `{{children}}`. So, the "Here is some text" will be rendered inside
+the div.
+
+Why is this powerful? Why not just pass in some text like
+`<MyComponent someText="Here is some text" />`
+
+That would be fine, until the moment when you want some of the text to be
+in a span, or you need multiple paragraphs. This is why block components are
+great.
+
+## Write regular HTML by default
+
+Now that you know how to use composition, it is possible to write
+more components that look a lot like regular HTML.
+There are several benefits:
+
+1. We spend more time reading code than writing it, so it's worth making
+effort to make the templates readable.
+2. People who are not JavaScript coders can participate in working within your
+app. This includes CSS specialists, interns, and Product Managers who are trying
+to find out whether some language is consistent across an app.
+Learning to write HTML well can take a long time, but almost anyone on your team
+can learn to read well-written HTML.
+3. It's easier to get familiar with components you didn't write.
+You can get the general gist without flipping back and forth between JavaScript
+and template code.
+4. It is easier to spot patterns that could become reusable components.
+
+Sometimes with this approach, there is a bit of copy-pasting and repetition.
+You _could_ condense it with some JavaScript, following "DRY" coding (Don't Repeat Yourself)
+rules. But have you ever heard of 
+[DAMP code](https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests)?
+DAMP (Descriptive And Meaningful Phrases) promotes the readability of the code.
+There is a balance to strike where you want code to be concise, but also
+readable.
+
+## Use the `let` helper to tidy up
+
+Almost every app I have worked in had some components that looked something like
+this:
+
+```
+<h1>My profile</h1>
+
+<div>
+    Name: 
+    {{@user.info.profile.setting.firstName}}
+    {{@user.info.profile.settings.lastName}}
+</div>
+<div>
+    Email Notifications:
+    {{if @user.info.profile.settings.emailNotifications "on" "off"}}
+</div>
+<Address @user.info.profile.settings.emailNotifications />
+<div>
+    Account number:
+    {{if @user.accountNumber}}
+</div>
+```
+
+This is ok if it happens a few times. But when you have a hundred components
+all rendering nested data, things get a little bit iffy as things grow and change.
+Suddenly, things have to be changed in 20 places whenever there is a change
+to the server data or the serializer.
+
+If I could go back and give myself some advice, I'd use `{{let}}` more:
+
+```handlebars
+{{let @user.info.profile.settings as |settings|}}
+    <div>
+        Name: 
+        {{setting.firstName}}
+        {{settings.lastName}}
+    </div>
+    <div>
+        Email Notifications:
+        {{if settings.emailNotifications "on" "off"}}
+    </div>
+    <Address settings.emailNotifications />
+    <div>
+        Account number:
+        {{if @user.accountNumber}}
+    </div>
+{{/let}}
+```
+
+It's a small thing, but small things add up.
