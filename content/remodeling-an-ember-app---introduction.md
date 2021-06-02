@@ -24,10 +24,15 @@ For this series, I'm pair programming with Chris Thoburn, aka [@runspired](https
 his work on Ember Data. He has over 500 commits and some great
 debugging skills that you and I can learn from.
 
-## Part 1 - Preparation
+## Preparation
 
-The focus of this first article will be about preparation.
-There are a lot of things we _could_ work on improving in this app.
+The focus of this first article will be about deciding where to begin,
+what kind of mindset to have, and an overview of the debugging tools in our toolbox.
+There are a lot of things we _could_ work on improving in this app, and there
+are multiple paths we could take that lead to success.
+
+### Areas of focus
+
 Making a list of them and prioritizing is very important step for any app refactor or upgrade.
 Some broad tasks to consider include:
 
@@ -38,9 +43,11 @@ Some broad tasks to consider include:
 - Documentation
 - Testing and QA
 
-### Making a list
+### Making a detailed list
 
-We did a brainstorm about `ember-api-docs` and came up with the following list:
+Thinkg about these areas of focus helps me get started with making a detailed list.
+
+Chris Thoburn and I did a brainstorm about `ember-api-docs` and came up with the following list:
 
 - Upgrade Ember and Ember data versions
 - Run some codemods for Octane
@@ -63,21 +70,21 @@ We start here so that we have all the latest and greatest features. This can als
 ### Getting in the right mindset
 
 Overhauling an app (or even a complex component) takes a different mindset than I use in my usual daily coding.
-If I intentionally adopt that mindset at the beginning, I'm a happier developer. What's that look like?
+Most days, I have expectations about how the code works, because I wrote it or studied a section of it closely. But in an overhaul, big upgrade, or refactor, there are a lot of unknowns! If I intentionally adopt a different mindset at the beginning of a big uprade, I'm a happier developer. What's that mindset look like?
 
 When I make a change that does not fix a problem, I try to be curious about why.
 
 When I see a different error, I treat it as a step forward.
 
-When I get stuck, I conduct small experiments.
+I keep a list of my successes as I go, including learning new things or getting one step deeper into the process.
+
+When I get stuck, I conduct small experiments, and record the results.
 
 I accept and expect that some of my experiments will be dead ends.
 
 When I don't know where an error is coming from, I focus on trying to find the source before trying to fix the error.
 
-I am skeptical of the node_modules folder and floating dependency versions.
-
-I define progress as learning new things or getting one step deeper into the process.
+I am skeptical of the things I changed, by default. This especially includes what's in the node_modules folder and shifting dependency versions.
 
 ### General debugging strategies
 
