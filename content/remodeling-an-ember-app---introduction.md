@@ -71,9 +71,13 @@ When I see a different error, I treat it as a step forward.
 
 When I get stuck, I conduct small experiments.
 
+I accept and expect that some of my experiments will be dead ends.
+
 When I don't know where an error is coming from, I focus on trying to find the source before trying to fix the error.
 
 I am skeptical of the node_modules folder and floating dependency versions.
+
+I define progress as learning new things or getting one step deeper into the process.
 
 ### General debugging strategies
 
@@ -87,6 +91,8 @@ You will see examples of all of these! But it's useful to look at them as a grou
 - If your app is using it, turning `fastboot` off while you debug. Add `?fastboot=false` to the end of your locally served URL, i.e. `http://localhost:4200/?fastboot=false`. 
 - Using "Break on exceptions" or "Break on uncaught exceptions" in your browser's debugging tools, to help with finding out where errors are coming from, with some more informative context
 - Using `debugger` in your `js` files to set breakpoints that you can see in your browser's debugging tools
+- Using `yarn why package-name` or `npm ls package-name` to confirm which versions of dependencies
+are actually in use, and which other dependencies use them.
 
 ## Up next
 
