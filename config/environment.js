@@ -70,7 +70,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.blog.host = 'https://jenweber.netlify.com';
+    ENV.blog.host = 'https://jenweber.dev';
   }
 
   return ENV;
