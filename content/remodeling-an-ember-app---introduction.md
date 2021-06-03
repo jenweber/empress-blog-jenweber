@@ -45,7 +45,7 @@ Some broad tasks to consider include:
 
 ### Making a detailed list
 
-Thinkg about these areas of focus helps me get started with making a detailed list.
+Thinking about these areas of focus helps me get started with making a detailed list.
 
 Chris Thoburn and I did a brainstorm about `ember-api-docs` and came up with the following list:
 
@@ -103,4 +103,4 @@ are actually in use, and which other dependencies use them.
 
 ## Up next
 
-Next, in Part 2, we will start doing the app version upgade!
+Next, in Part 2, we will start doing the app version upgrade!
