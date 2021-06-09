@@ -15,6 +15,6 @@ tags:
 
 As a member of the [Ember Core Team](https://emberjs.com/team), she works on code, docs, and contributor engagement for the [Ember.js](https://emberjs.com) front end framework. 
 
-Jen works at [ActBlue Technical Services](https://secure.actblue.com), where she helps build fundraising tools used by progressive nonprofits and Democratic political candidates. She is a fan of open source and making tech a more welcoming, inclusive industry. 
+Jen works at [ActBlue Technical Services](https://secure.actblue.com), where she helps build fundraising tools used by thousands of progressive nonprofits and Democratic political candidates, with a focus on small dollar donors. She is a fan of open source and making tech a more welcoming, inclusive industry. 
 
 Pronouns: she/her or they/them
