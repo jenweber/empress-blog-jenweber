@@ -106,7 +106,7 @@ We wanted to avoid making too many unnecessary changes in this app until after o
   },
 ```
 
-We only needed to ignore two rules in our `.template-lintrc.js`, we only needed to add two rule ignores. We can learn all about why these rules exist by searching for the rule name in [`eslint-plugin-ember` source code](https://github.com/ember-cli/eslint-plugin-ember). The file name matches the rule that shows up in the warnings. You can find it quickly on GitHub by pressing the letter `T` from the repository's main page and typing in the name of the rule.
+We only needed to ignore two rules in our `.template-lintrc.js`. We can learn all about why these rules exist by searching for the rule name in [`eslint-plugin-ember` source code](https://github.com/ember-cli/eslint-plugin-ember). The file name matches the rule that shows up in the warnings. You can find it quickly on GitHub by pressing the letter `T` from the repository's main page and typing in the name of the rule.
 
 ```js
 // excerpt from .template-lintrc.js
@@ -125,7 +125,7 @@ Once our linting tests were passing, we moved on to the next step!
 
 ## Understanding application test failures
 
-When you do an upgrade like this, there are some common sources of failures. It's helpful to ponder thus line of questioning below for a little when you run into a test that is tricky to fix:
+When you do an upgrade like this, there are some common sources of failures. It's helpful to ponder this line of questioning below for a little when you run into a test that is tricky to fix:
 
 - Did I make a mistake during the upgrade?
 - Did the upgrade uncover a bug that was hidden previously?
@@ -168,7 +168,7 @@ not ok 66 Chrome 91.0 - [196 ms] - Acceptance | document title: is of format cla
 
 This was an example of a mistake we made while upgrading. The test that was failing was checking the page title of a certain URL in the app. A page's title is important for SEO, accessibility, and overall user experience. It's part of the text that shows up in a search result. It is the text that shows up at the top of your browser tab. And for people who use assistive tech, it helps them know what page they are on when they flip through tabs. You can learn more about page titles in [the Ember Guides](https://guides.emberjs.com/release/accessibility/page-template-considerations/#toc_page-title).
 
-What happened was that when the upgrade diff was applied, it added something like `{{page-title "EmberApiDocs"}}` to the `application.hbs` template. Community member [prakashchoudhary07](https://github.com/prakashchoudhary07) discovered that the page title was being set in another, more sophisticated way in this app. Therefore, we could delete the page title helper, and the test passed.
+What happened was that when the upgrade diff was applied, it added something like `{{page-title "EmberApiDocs"}}` to the `application.hbs` template. Community member [prakashchoudhary07](https://github.com/prakashchoudhary07) discovered that the page title was being set in another, more sophisticated way in this app, and they opened a PR to help us out. We could delete the page title helper, and the test passed. Thanks prakashchoudhary07!
 
 Lastly, there was an error due to reliance on private API. One test was using private APIs on the router inside the test only. When I had tried to upgrade the test to use the router service instead, the method was no longer available. So, I undid the change I made during linting fixes and instead added an ignore to the `eslint.rc`. We can deal with that issue in another PR!
 
