@@ -16,6 +16,10 @@ Today's topic is debugging an Ember app's test suite after upgrading some depend
 
 This is Part 3 of a series of blog posts. We're on a journey together to remodel an older Ember app, [ember-api-docs](https://github.com/ember-learn/ember-api-docs), incrementally bringing it up to date with the latest and best Ember and Ember Data patterns.
 
+For this series, I'm pair programming with Chris Thoburn, aka [@runspired](https://github.com/runspired), who is known for
+his work on Ember Data. He has over 500 commits and some great
+debugging skills that you and I can learn from.
+
 ## What you will learn in this segment
 
 - How to run tests on-demand instead of on every change
