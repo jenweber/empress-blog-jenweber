@@ -12,7 +12,7 @@ tags:
   - new
 ---
 
-When you need to upgrade and ember app, codemods can help you update your app's syntax faster than you could make changes by hand. Today, we'll talk about codemods and cover what to do about jQuery usage in your apps.
+When you need to upgrade an Ember app, codemods can help you update your app's syntax faster than you could make changes by hand. Today, we'll talk about codemods and cover what to do about jQuery usage in your apps.
 
 This is Part 4 of a series of blog posts. We're on a journey together to remodel an older Ember app, [ember-api-docs](https://github.com/ember-learn/ember-api-docs), incrementally bringing it up to date with the latest and best Ember and Ember Data patterns.
 
