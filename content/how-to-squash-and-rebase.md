@@ -14,7 +14,7 @@ tags:
 
 Did you ever need to do `git rebase --continue` over and over again just to get your own branch up to date? Chances are, you are on the sad path, and 99% of the time, there's a better strategy!
 
-Rebasing is commonly a nightmare for newer devs or even experienced devs who don't use this workflow often. Here's how I walk people through their first squash and rebase. There are a ton of excellent articles and videos on this, but everyone does it a little differently. I like [this video by The Modern Coder](https://youtu.be/V5KrD7CmO4o) that shows part of the process in action.
+Rebasing is commonly a nightmare for newer devs or even experienced devs who don't use this workflow often, but it doesn't have to be! Here's how I walk people through their first squash and rebase. There are a ton of excellent articles and videos on this, but everyone does it a little differently. I like [this video by The Modern Coder](https://youtu.be/V5KrD7CmO4o) that shows part of the process in action. After a few times doing this process, it will feel tedious but straightforward. No nightmares here.
 
 ## Set your default text editor in git
 
@@ -45,6 +45,7 @@ git rebase -i the-commit-id-you-looked-up-goes-here
 ```
 
 Mark the commits you want to squash by putting "s" instead of "pick" in front of all the commits except the first one. The one at the top should still say "pick."
+If there are a ton of conflicts, sometimes it's best to do some pair programming with the other dev(s) who made changes to these files. They can help you decide what to do.
 
 Save and close, and wait for a new text editor prompt to pop up.
 
