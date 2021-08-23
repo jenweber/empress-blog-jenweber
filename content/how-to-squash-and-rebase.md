@@ -14,27 +14,17 @@ tags:
 
 Did you ever need to do `git rebase --continue` over and over again just to get your own branch up to date? Chances are, you are on the sad path, and 99% of the time, there's a better strategy!
 
-Rebasing is commonly a nightmare for newer devs or even experienced devs who don't use this workflow often. Here's how I walk people through their first squash and rebase.
-
-## Why squash before rebase?
-
-Whenever you rebase, git compares every commit to the rebase target to see if there are conflicts. It makes you resolve them before you move on. Sometimes, this is useful - maybe you want to step through. But most of the time, fixing the conflict causes even more conflicts.
-
-Instead, we want to squash all our work into just one commit. Then we resolve any conflicts _just once_, and then we are off to the races.
-
-## When should I _not_ squash before rebase?
-
-Every company/project has different norms about how they like to manage their project git history. If they tell you not to squash or rebase, then don't. Ask to pair program with someone a few times to get a sense of a nice workflow for their process.
+Rebasing is commonly a nightmare for newer devs or even experienced devs who don't use this workflow often. Here's how I walk people through their first squash and rebase. There are a ton of excellent articles and videos on this, but everyone does it a little differently. I like [this video by The Modern Coder](https://youtu.be/V5KrD7CmO4o) that shows part of the process in action.
 
 ## Set your default text editor in git
 
-You only need to do this once. If you have not set your default editor for git, then some of the steps below will open in Vim.
+You only need to do this once. Skip this if you already configured this on your computer. If you have not set your default editor for git, then some of the steps below would open in vim, which is difficult to use if you have zero practice with it.
 
 I use VSCode, and so I used the one-line command in [this article by Carl Saunders](https://dev.to/deadlybyte/make-vs-code-your-default-git-editor-j6d).
 
 ## Steps to squash and rebase
 
-Create a backup branch and push it up to GitHub/Gitlab/etc. so your work is safe no matter what. This backup branch will have all your work nice and safe in case you need to start over.
+Create a backup branch and push it up to GitHub/Gitlab/etc. This backup branch will have all your work nice and safe in case you need to start over.
 
 ```
 git checkout my-branch-name
@@ -131,3 +121,13 @@ git checkout -b my-branch-name
 ```
 
 Now you are back to where you started, and can try again.
+
+## Why squash before rebase?
+
+Whenever you rebase, git compares every commit to the rebase target to see if there are conflicts. It makes you resolve them before you move on. Sometimes, this is useful - maybe you want to step through. But most of the time, fixing the conflict causes even more conflicts.
+
+Instead, we want to squash all our work into just one commit. Then we resolve any conflicts _just once_, and then we are off to the races.
+
+## When should I _not_ squash before rebase?
+
+Every company/project has different norms about how they like to manage their project git history. If they tell you not to squash or rebase, then don't. Ask to pair program with someone a few times to get a sense of a nice workflow for their process.
