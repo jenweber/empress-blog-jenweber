@@ -12,11 +12,13 @@ tags:
   - new
 ---
 
-Many web developers don't realize that they have a significant knowledge gap when it comes to accessibility. They work in codebases that are full of mistakes, and they may unknowingly be spreadingthem. This quick self-assessment covers what I consider to be basic accessibility knowledge. If you miss any of these questions, it's a sign that you may be missing a big part of what it takes to build apps that anyone can use, and should set aside some time to learn ASAP.
+Many web developers don't realize that they have a significant knowledge gap when it comes to accessibility. This quick self-assessment includes topics that I consider to be basic accessibility knowledge - things that every front end developer should know and learn.
 
 ## Goals
 
-The goal of this assessment is to help turn unknown-unknowns into _known_-unknowns. If you identify that you have a learning gap, then you can do something about it! This is progress. There's a saying that "the best time to plant a tree is 20 years ago. The second best time is now."
+The goal of this assessment is to help turn unknown-unknowns into _known_-unknowns. Whenever you identify that you have a learning gap, then you can do something about it! This is progress.
+
+If you miss any of these questions, it's a sign that you could be missing a big part of what it takes to build apps that anyone can use, and should set aside some time to learn ASAP.
 
 ## The questions
 
