@@ -12,13 +12,11 @@ tags:
   - new
 ---
 
-Many web developers don't realize that they have a significant knowledge gap when it comes to accessibility. This quick self-assessment includes topics that I consider to be basic accessibility knowledge - things that every front end developer should know and learn.
+Some web developers with a significant accessibility knowledge gap may not even realize it. This quick self-assessment includes topics that I consider to be basic accessibility knowledge - things that every front end developer should know and learn.
 
 ## Goals
 
 The goal of this assessment is to help turn unknown-unknowns into _known_-unknowns. Whenever you identify that you have a learning gap, then you can do something about it! This is progress.
-
-If you miss any of these questions, it's a sign that you could be missing a big part of what it takes to build apps that anyone can use, and should set aside some time to learn ASAP.
 
 ## The questions
 
@@ -35,7 +33,13 @@ If you miss any of these questions, it's a sign that you could be missing a big 
 11. How do you start up a screen reader on your computer?
 12. How do you decide whether something should be a button or a link?
 
-## The answers and learning resources
+## The answers
+
+Read through the answers to find out how you did! If you miss some of these questions, it's a sign that you could be missing a big part of what it takes to build apps that anyone can use, and should set aside time to learn ASAP.
+
+TODO
+
+## Next steps
 
 TODO
 
