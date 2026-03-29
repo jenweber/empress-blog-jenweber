@@ -45,7 +45,7 @@
     "ember-responsive-image": "^1.0.0-rc.6",
     "ember-source": "~3.8.0",
     "ember-welcome-page": "^3.2.0",
-    "empress-blog": "^1.6.1",
+    "empress-blog": "^5.0.1",
     "empress-blog-casper-template": "^3.0.4",
     "eslint-plugin-ember": "^5.2.0",
     "loader.js": "^4.7.0",
